@@ -1,0 +1,70 @@
+<h1>Reactive Form</h1>
+<!-- <p>without validation</p>
+
+ <form [formGroup]="myForm" (ngSubmit)="onSubmitReactiveForm()">
+    <div class="form-Group">
+        <label>First Name:</label>
+        <input type="text" name="fname" formControlName ="fname" class="form-control">
+</div>
+<div class="form-group">
+    <label>Last Name:</label>
+    <input type="text" name="lname" formControlName ="lname" class="form-control">
+</div>
+<div class="form-group">
+    <label>Password:</label>
+    <input type="Password" name="pass" formControlName="pass" class="form-control">
+</div>
+<div class="form-group">
+    <label>Date:</label>
+    <input type="date" name="date" formControlName="date" class="form-control">
+</div><br>
+<button class="btn btn-info">Submit</button>
+</form>  -->
+<!-- <form [formGroup]="MyForm">
+    <div class="form-group">
+        <label>First Name:</label>
+        <input type="text" name="Fname">
+    </div>
+</form> -->
+
+<p>With Validation</p>
+<form [formGroup]="myForm" (ngSubmit)="onSubmitReactiveForm()">
+    <div class="form-group">
+        <label >First Name: <span style="color:red ;">*</span></label>
+        <input type="text" name="fname" formControlName="fname" class="form-control"
+        required placeholder="First name is required"
+        [ngClass]="{'is-invalid': isFormSubmitted && f.fname.errors}">
+        <div *ngIf="isFormSubmitted && f.fname.errors?.required"class="invalid-feedback">
+          First name is required
+        </div>
+    </div>
+     <div class="form-group">
+        <label >Last Name: <span style="color:red ;">*</span></label>
+        <input type="text" name="lname" formControlName="lname" class="form-control"
+        required placeholder="Last name is required"
+        [ngClass]="{'is-invalid':isFormSubmitted && f.lname.errors}">
+        <div *ngIf="isFormSubmitted && f.lname.errors?.required"class="invalid-feedback">
+          Last name is required
+        </div>
+    </div>
+    <div class="form-group"><br>
+        <label>Email: <span style="color:red ;">*</span></label><br>
+        <input type="email" name="email" formControlName="email" class="form-Group"
+        required placeholder="Email"
+        [ngClass]="{'is-invaild':isFormSubmitted && f.email.errors}">
+        <div *ngIf="isFormSubmitted && f.email.errors?.pattern" class="invalid-feedback">
+            Email is required
+        </div>
+        <div *ngIf="isFormSubmitted && f.email.errors?.pattern" class="invalid-feedback">
+            plz enter valid email
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Password:</label>
+        <input type="Password" name="pass" formControlName="pass" class="form-control">
+    </div><br> 
+
+    <button class="btn btn-info">Submit</button>
+
+
+</form>

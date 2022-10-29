@@ -1,0 +1,109 @@
+<h1>Temp form with edit and delete</h1>
+
+<!-- <form name="myForm" #myForm1="ngForm">
+    <div class="form-group">
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname" class="form-control" #fname="ngModel" 
+        [(ngModel)]="fn" ngModel required [ngClass]="">
+
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" name="lname" class="form-control" #lname="ngModel"
+        ngModel>
+
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" name="email" class="form-control" #email="ngModel"ngModel
+        >
+
+    </div>
+    <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" name="age" class="form-control" #age="ngModel"ngModel
+        >
+
+    </div>
+    <div class="form-group">
+        <label for="date">Date of Birth:</label>
+        <input type="Date" name="Date" class="form-control" #age="ngModel"ngModel
+        >
+
+    </div>
+    <div>
+        <button class="btn btn-info" 
+        *ngIf="submitButton"(click)="onSubmit(myForm1)"ngSubmit="myForm.form.valid && onSubmit(myForm)">Submit</button>
+         <button type="reset" class="btn btn-light">reset</button>
+         <button class="btn btn-success" *ngIf="showButton"(click)="onUpdateTemp(myForm1)"></button>  
+    </div>
+    
+    
+</form>
+<div *ngIf="showTable">
+    <table class="table table-success">
+        <tr class="table-info">
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>EMAIL </th>
+            <th>AGE</th>
+            <th>DATE OF BIRTH</th>
+        </tr>
+        <tr *ngFor="let y of data">
+            <td>{{y.fanme}}</td>
+            <td>{{y.lanme}}</td>
+            <td>{{y.email}}</td>
+            <td>{{y.age}}</td>
+            <td>{{y.date}}</td>
+            <td><button type="button"class="btn btn-outline-danger"(click)="onDel(y)">Delete</button></td>
+            <td><button type="button" class="btn btn-light"(click)="onEdit(y)">Edit</button></td>
+        </tr>
+    </table>
+</div> -->
+<form name="myForm" #frm="ngForm">
+    <div class="form-group">
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname" id="" class="form-control" #fn="ngModel"
+        ngModel [(ngModel)]="firstName" required [ngClass]="{'is-invalid':frm.submitted && fn.invalid}">
+        <div *ngIf="frm.submitted && fn.invalid" class="invalid-feedback"> first name required 
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lname" class="form-control"#ln="ngModel"
+        [(ngModel)]="lastName" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" name="email" class="form-control"#eml="ngModel"
+     [(ngModel)]="email" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="marks">Enter Marks:</label>
+        <input type="number" name="marks" class="form-control"#mrks="ngModel"
+        [(ngModel)]="marks" ngModel>
+    </div>
+    
+    <button class="btn btn-primary"(click)="frm.form.valid && onSubmitForm(frm)">SUBMIT</button>
+    <button class="btn btn-second ary"(click)="onUpdateForm(frm)"*ngIf="showUpdate">UPDATE</button> -->
+    <button type="reset" class="btn btn-light">reset</button>
+    </form>
+
+<table class="table table-primary"
+    *ngIf="showTable">
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>Marks</th>
+    </tr>
+    <tr *ngFor="let x of dataMarks">
+        <td>{{x.fname}}</td>
+        <td>{{x.lname}}</td>
+        <td>{{x.email}}</td>
+        <td>{{x.marks}}</td>
+        <td><button class="btn btn-danger"(click)="onDelete(x)">DELETE</button></td>
+        <td><button class="btn btn-warning" (click)="onEdit(x)">EDIT</button></td>
+    </tr>
+</table>

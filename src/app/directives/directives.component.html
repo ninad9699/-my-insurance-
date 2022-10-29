@@ -1,0 +1,58 @@
+<h1>Angular Directives</h1>
+
+<h2>1. structal directive</h2>
+ 
+<h3>ngIf</h3>
+<div>
+    <p *ngIf="age1 < 18"> age is {{age1}} u r not apper for exam </p>
+</div>
+
+
+
+<div *ngIf="age>18" class="xyz"> your age is {{age}} and its is greater than 18
+
+</div><br><br>
+<h3>ngFor</h3>
+<select class="for">
+    <option *ngFor="let nm of stud">{{nm}} </option>
+    
+</select><br><br>
+
+<select>
+    <option *ngFor="let nm of salary">{{nm}}</option>
+</select>
+<br><br>
+<table class="tlb">
+    <tbody>
+        <tr>
+            <th>number</th>
+            <td>name</td>
+            <td>salary</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>ngSwitch</h3>
+
+<div [ngSwitch]="num">
+   <div *ngSwitchCase = "1">one</div>
+   <div *ngSwitchCase = "2">two</div>
+   <div *ngSwitchCase = "3">three</div>
+   <div *ngSwitchDefault>this is default case</div>
+</div>
+<br><br>
+
+<h2>attribute directive</h2><br>
+
+<p class="ts1">this is simple class </p>
+
+<p [ngClass]="ts2">xyz</p>
+
+<div [ngClass]="showData ? 'ts1':'ts2'">
+<p>this is an conditionalcss</p>
+</div>
+
+<h3>ngStyle</h3>
+<div [ngStyle]="{'clor':'pink','font-size': '20px'}">
+    <p>this is ngStyle</p>;
+</div>

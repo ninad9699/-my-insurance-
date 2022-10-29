@@ -1,0 +1,61 @@
+<!-- <p>livecoading works!</p>
+
+
+ <table class="tlb">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                NAME
+            </th>
+            <th>AGE</th>
+            <th>COUNTRY</th>
+            <th>GENDER</th>
+        </tr>
+         <tr *ngFor="let row of rows">
+            <td>{{row.ID}}</td>
+            <td [ngClass]="row.AGE>45 ? 'red':''">{{row.NAME}}</td>
+            <td>{{row.AGE}}</td>
+            <td>{{row.COUNTRY}}</td>
+            <td>{{row.GENDER}}</td>
+        </tr>
+        
+    
+</table>
+<small>note:emp having age above 45 are shown red</small> <br><br>
+<button (click)="deletData()"
+class="btn btn-primary">Delete</button> -->
+
+<!-- <table>
+    <th>
+        name
+    </th>
+</table> -->
+
+<h2>Live coading</h2>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmitReactiveForm()">
+    <div class="form-Group">
+        <label>First Name:</label>
+        <input type="text" name="fname" formControlName="fname"class="form-control">
+
+    </div>
+    <div class="form-Group">
+        <label>Last Name:</label>
+        <input type="text" name="lname" formControlName="lname"class="form-control">
+
+    </div>
+    <div class="form-Group">
+        <label>Age</label>
+        <input type="age" name="age" formControlName="age"class="form-control">
+
+    </div>
+    <div class="form-Group">
+        <label>Password:</label>
+        <input type="password" name="pass" formControlName="pass"class="form-control">
+
+    </div>
+    <button class="btn btn-info">Submit</button>
+
+</form>

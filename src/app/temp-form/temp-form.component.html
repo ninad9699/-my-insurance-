@@ -1,0 +1,148 @@
+<!-- <h1>template driven form</h1> -->
+
+<!-- <form name="myForm" #frm = "ngForm" (ngSubmit)="onSubmitForm(frm)">
+    <div class="form-group">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" name="fname" class="form-control" #fname ="ngModel"
+        [(ngModel)]="fn">
+    </div>
+
+    <div class="form-group"><br>
+        <label for="lastName">Last Name:</label> <br>
+        <input type="text" name="lname" class="form-control"#lname ="ngModel" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email:</label><br>
+        <input type="text" name="email" class="form-control"#email ="ngModel" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="course">Course:</label><br>
+        <select name="course" class="form control"#course ="ngModel" ngModel>
+            <option *ngFor="let course of courses">{{course}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="grnder">Gender:</label><br>
+        <input type="radio" name="gender" #gender ="ngModel" ngModel value="male"> &nbsp;&nbsp;
+        <label for="male">Male:</label>
+        <input type="radio" name="gender" #gender ="ngModel" ngModel value="female">&nbsp;&nbsp;
+        <label for="female">Female:</label>
+    </div>
+
+    <div class="form-group">
+        <label for="pass">Password:</label><br>
+        <input type="password" name="pass" class="form-control" #pass ="ngModel" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="cpass">Conform Password:</label><br>
+        <input type="password" name="cpass" class="form-control"#cpass ="ngModel" ngModel>
+    </div>
+
+    <div class="form-group"><br>
+        <button type="submit" class="btn btn-info" style="color:blue ; background-color: aqua;">Submit</button><br>
+    </div>
+
+</form> -->
+
+<!-- <h2>Template Driven form with validation</h2> --> -->
+<!-- <form name="myForm" #frm = "ngForm" (ngSubmit)="frm.form.valid && onSubmitForm(frm)">
+    <div class="form-group">
+        <label for="firstName">First Nmae: <span style="color:red;">*</span> </label><br>
+        <input type="text" name="fname" class="form-control" #fname ="ngModel"
+        ngModel required [ngClass]="{'is-invalid':frm.submitted && fname.invalid}"
+        placeholder="Please Enter First name">
+        <div *ngIf="frm.submitted && fname.invalid" class="invalid-feedback">
+            First name required
+        </div>
+    </div>
+
+    <div class="form-group"><br>
+        <label for="lastName">Last Name: <span style="color:red;">*</span></label> <br>
+        <input type="text" name="lname" class="form-control"#lname ="ngModel" 
+        ngModel required [ngClass]="{'is-invalid':frm.submitted && lname.invalid}"
+        placeholder="Please Enter Last name">
+        <div *ngIf="frm.submitted && lname.invalid" class="invalid-feedback">
+            Last name required
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="age">AGE:</label><br>
+        <input type="age" name="Age" class="form-control"#age ="ngModel" ngModel 
+        placeholder="Enter Your Age">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email: <span style="color:red;">*</span> </label><br>
+        <input type="text" name="email" class="form-control"#email ="ngModel" 
+        ngModel required [ngClass]="{'is-invalid':frm.submitted && email.invalid}"
+        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+        placeholder="Please Enter email">
+        <div *ngIf="email.touched" class="invalid-feedback">
+            <p *ngIf="email.errors?.['required']">Email is Required </p>
+            <p *ngIf="email.errors?.['pattern']">Please Enter valid Email</p>
+    </div>
+
+    <div class="form-group">
+        <label for="course">Course:</label><br>
+        <select name="course" class="form control"#course ="ngModel" ngModel>
+            <option *ngFor="let course of courses">{{course}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="grnder">Gender:</label><br>
+        <input type="radio" name="gender" #gender ="ngModel" ngModel value="male"> &nbsp;&nbsp;
+        <label for="male">Male:</label>
+        <input type="radio" name="gender" #gender ="ngModel" ngModel value="female">&nbsp;&nbsp;
+        <label for="female">Female:</label>
+    </div>
+
+    <div class="form-group">
+        <label for="pass">Password:</label><br>
+        <input type="password" name="pass" class="form-control" #pass ="ngModel" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="cpass">Conform Password:</label><br>
+        <input type="password" name="cpass" class="form-control"#cpass ="ngModel" ngModel>
+    </div>
+
+    <div class="form-group"><br>
+        <button type="submit" class="btn btn-info" style="color:blue ; background-color: aqua;">Submit</button><br>
+    </div> -->
+ 
+ <h2>Rivision om temp form</h2>
+
+ <!-- <form name="edg form" #frm="ngForm" (ngSubmit)="onSubmitForm(frm)">
+    <div class="form group">
+        <label for="Fname">Enter First Name</label>
+        <input type="text" name="fName"class="form-control" #fname="ngModel" ngModel>
+    </div>
+    <div class="form group">
+        <label for="Lname">Enter Last Name</label>
+        <input type="text" name="Lname"class="form-control" #lname="ngModel" ngModel>
+    </div>
+    <div class="form group">
+        <button type="submit" class="btn btn-info" >submit</button>
+    </div>
+ </form> 
+
+ <!-- <form name="edg form" #frm="ngForm" (ngSubmit)="frm.form.valid && onSubmitForm(frm)">
+    <div class="form group">
+        <label for="Fname">Enter First Name <span style="color:red;">*</span></label>
+        <input type="text" name="fName"class="form-control" #fname="ngModel" ngModel
+        required [ngClass]="{'is-invalid':frm.submitted && fname.invalid}">
+    </div>
+    <div class="form group">
+        <label for="Lname">Enter Last Name</label>
+        <input type="text" name="Lname"class="form-control" #lname="ngModel" ngModel>
+    </div>
+    <div class="form group">
+        <button type="submit" class="btn btn-info" >submit</button>
+    </div>
+ </form> -->
+

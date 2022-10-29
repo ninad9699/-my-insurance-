@@ -1,0 +1,33 @@
+<p>servicedata works!</p>
+<table appCustomDirective class="table table-info">
+    <tr>
+        <th>UserId</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th>year</th>
+        <!-- <th>Discription</th> -->
+    </tr>
+
+    <tr appCustomDirective  *ngFor="let x of postData">
+        <td>{{x.userId}}</td>
+        <td>{{x.title}}</td>
+        <td>{{x.body}}</td>
+        <td>{{x.year}}</td>
+
+    </tr>
+
+</table>
+<!-- <table>
+    <tr appCustomDirective>
+        <th>UserID</th>
+        <th>ID</th>
+        <th>Original Title</th>
+        <th>Title with first 10 chars</th>
+    </tr>
+    <tr *ngFor="let x of backendRespFilter;let e = even;let o = odd"[ngClass]="{ob:e, ey : o}">
+         <td>{{x.userId}}</td>
+         <td>{{x.id}}</td>
+         <td>{{x.title}}</td>
+         <td>{{x.title | slice:0:10}}</td>
+    </tr>
+</table> -->
