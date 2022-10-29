@@ -17,6 +17,7 @@ import { ServicedataComponent } from './servicedata/servicedata.component';
 import { CustomDirectiveDirective } from './servicedata/custom-directive.directive';
 import { RxJSoprComponent } from './rx-jsopr/rx-jsopr.component';
 import { PromiseComponent } from './promise/promise.component';
+import { GitcompComponent } from './gitcomp/gitcomp.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { PromiseComponent } from './promise/promise.component';
     CustomDirectiveDirective,
     RxJSoprComponent,
     PromiseComponent,
+    GitcompComponent,
   
     
    
